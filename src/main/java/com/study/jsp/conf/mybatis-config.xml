@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<!-- 이 파일의 형식은 여기에 https://mybatis.org/mybatis-3/ko/getting-started.html -->
+
+<configuration>
+
+  <typeAliases>
+    <typeAlias type="com.study.jsp.model.UserVO" alias="uVo"/>    
+    <typeAlias type="com.study.jsp.model.BoardVO" alias="bVo"/>    
+  </typeAliases>
+  
+  <!-- DB 연결정보 설정 -> 마이바티즈 자동 연결 (나중에 이 부분은 스프링 설정 xml 파일로 이동하게 된다.)-->
+  <environments default="dev">
+    <environment id="dev">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>        
+        <property name="url" value="jdbc:mysql://localhost:3306/mvc1?serverTimezone=Asia/Seoul"/>
+        <property name="username" value="mvcweb"/>        
+        <property name="password" value="1234"/>        
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <!-- SQL을 정의한 xml 설정 파일 (나중에 이 부분은 스프링 설정 xml 파일로 이동하게 된다.) -->
+  <mappers>
+    <!-- JSP에서는 경로설정시 (루트)/ 부터 작성하는게 키포인트 -->
+    <mapper resource="/com/study/jsp/mapper/UserMapper.xml" />
+    <mapper resource="/com/study/jsp/mapper/BoardMapper.xml" />
+  </mappers>
+</configuration>
+
