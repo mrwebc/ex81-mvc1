@@ -1,4 +1,4 @@
-package com.study.jsp.conf;
+package myBatis;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ public class MyBatisManager {
   //2. 생성자에서 설정파일을 읽어들여 SqlSessionFactory 객체 생성
   @SuppressWarnings("static-access")
   private MyBatisManager() {
-    String resource = "com/study/jsp/conf/mybatis-config.xml";//설정파일    
+    String resource = "myBatis/mybatis-config.xml";//설정파일    
     InputStream inputStream = null;
     try {
       inputStream = Resources.getResourceAsStream(resource);

@@ -1,4 +1,4 @@
-package com.study.jsp.conf;
+package com.study.jsp.filter;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.study.jsp.conf;
+package com.study.jsp.ioc;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,6 +11,8 @@ import com.study.jsp.srv.BoardService;
 import com.study.jsp.srv.BoardServiceImpl;
 import com.study.jsp.srv.UserService;
 import com.study.jsp.srv.UserServiceImpl;
+
+import myBatis.MyBatisManager;
 
 public enum Factory {
   

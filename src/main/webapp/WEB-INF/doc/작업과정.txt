@@ -1,0 +1,44 @@
+mvc 게시판 수업 - 작업 순서
+
+1. 다이나믹 웹프로젝트 생성
+2. 메이븐 프로젝트 변환
+3. 설정>BuildPath, Compile, Facet -> ver11 설정
+
+4. pom.xml 에서 필수 의존모듈 <dependencies> 설정 
+    1) mysql-connector-j
+    2) mybatis
+    3) jstl
+    4) lombok
+
+5. 패키지 생성
+    1) 기본패키지 - com.study.jsp 
+    1) 서브패키지 - srv, dao, model, filter
+
+6. main의 서브폴더 resources 생성후 "Use as Source Folder"로 설정
+7. resources 하위에 myBatis > MyBatisFactory + mybatis-config.xml 
+         myBatis > mapper > 테이블명Mapper.xml 생성
+
+8. login.jsp - 화면단 디자인
+
+9. 테이블명Mapper.xml에 쿼리문 작성
+
+10. model>VO, DTO 클래스 작성
+    게터, 세터, ToStirng() 포함
+
+11. Factory클래스에서 DI 준비
+    1) SqlSession
+    2) 필요한 ㅇㅇDao클래스 객체
+    3) 필요한 ㅇㅇServiceImpl 객체
+    4) 게터메소드
+
+12. dao>테이블에 매핑할 interface 와 impl 클래스 작성
+     필요한 객체는 Factory에서 받아온다.
+
+13. srv>컨트롤러와 DAO를 이어줄 Service 클래스 작성
+     필요한 객체는 Factory에서 받아온다.
+
+14. 컨트롤러에서 알맞은 Service 객체의 메소드 호출
+     필요한 객체는 Factory에서 받아온다.
+
+15. 넘겨받은 데이터를 dispatcher.forward()를 통해 jsp에 전달
+16. 화면단 jsp 에서 데이터 출력

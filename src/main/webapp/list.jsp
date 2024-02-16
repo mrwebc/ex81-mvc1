@@ -1,13 +1,20 @@
 <%@page import="com.study.jsp.srv.BoardService"%>
-<%@page import="com.study.jsp.conf.Factory"%>
+<%@page import="com.study.jsp.ioc.Factory"%>
 <%@page import="com.study.jsp.model.BoardDTO"%>
 <%@page import="java.util.List"%>
 <%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-    //login page를 거쳐오면 session에 id와 name 속성이 존재한다
+    //list.jsp는 로그인한 사용자만 접근 가능하도록 설정
     if(session.getAttribute("userid") == null) {
-        response.sendRedirect("./login.jsp");
+	/*
+	  sendRedirect()의 기준(루트)은 http://localhost:8090 까지 이므로 아래의 세가지 방법이 가능하다.      
+	  만약 설정해도 반영이 안될 경우는 Project>Clean 을 하면 해결된다.
+	    1. response.sendRedirect("/jsp_mvc2/listCtrl");
+	    2. response.sendRedirect(request.getContextPath() + "/listCtrl");
+	    3. response.sendRedirect("./listCtrl");  
+	*/ 
+        response.sendRedirect(request.getContextPath()+"/login.jsp");
     }
 
     BoardService boardService = Factory.INSTANCE.getBoardService();
@@ -46,14 +53,14 @@
             </tr>   
           </thead>
           <tbody>
-              <c:forEach items="${list}" var="bVo">
+              <c:forEach items="${list}" var="dto">
 
                 <tr>
-                    <td>${bVo.seq}</td>
-                    <td><a href="read.jsp?seq=${bVo.seq}">${bVo.title}</a></td>
-                    <td>${bVo.nickname}</td>
-                    <td>${bVo.regdate}</td>
-                    <td>${bVo.cnt}</td>
+                    <td>${dto.seq}</td>
+                    <td><a href="read.jsp?seq=${dto.seq}">${dto.title}</a></td>
+                    <td>${dto.nickname}</td>
+                    <td>${dto.regdate}</td>
+                    <td>${dto.cnt}</td>
                 </tr>
 
               </c:forEach>

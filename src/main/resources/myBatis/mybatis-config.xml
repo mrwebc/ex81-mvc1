@@ -27,9 +27,8 @@
   
   <!-- SQL을 정의한 xml 설정 파일 (나중에 이 부분은 스프링 설정 xml 파일로 이동하게 된다.) -->
   <mappers>
-    <!-- JSP에서는 경로설정시 (루트)/ 부터 작성하는게 키포인트 -->
-    <mapper resource="/com/study/jsp/mapper/UserMapper.xml" />
-    <mapper resource="/com/study/jsp/mapper/BoardMapper.xml" />
+    <mapper resource="myBatis/mapper/UserMapper.xml" />
+    <mapper resource="myBatis/mapper/BoardMapper.xml" />
   </mappers>
 </configuration>
 
