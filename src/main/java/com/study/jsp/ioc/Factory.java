@@ -3,10 +3,10 @@ package com.study.jsp.ioc;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.study.jsp.dao.BoardMapper;
-import com.study.jsp.dao.BoardMapperDAO;
-import com.study.jsp.dao.UserMapper;
-import com.study.jsp.dao.UserMapperDAO;
+import com.study.jsp.persistence.BoardMapper;
+import com.study.jsp.persistence.BoardMapperDAO;
+import com.study.jsp.persistence.UserMapper;
+import com.study.jsp.persistence.UserMapperDAO;
 import com.study.jsp.srv.BoardService;
 import com.study.jsp.srv.BoardServiceImpl;
 import com.study.jsp.srv.UserService;

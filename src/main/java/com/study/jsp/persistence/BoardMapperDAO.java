@@ -1,4 +1,4 @@
-package com.study.jsp.dao;
+package com.study.jsp.persistence;
 
 import java.util.List;
 

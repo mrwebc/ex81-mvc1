@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <!-- 네임스페이스는 "풀패키지+인터페이스명" -->
-<mapper namespace="com.study.jsp.dao.BoardMapper">
+<mapper namespace="com.study.jsp.persistence.BoardMapper">
   <cache />
   
   <select id="findAll" resultType="bVo">

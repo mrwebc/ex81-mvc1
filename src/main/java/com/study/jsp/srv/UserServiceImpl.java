@@ -2,9 +2,9 @@ package com.study.jsp.srv;
 
 import java.util.Map;
 
-import com.study.jsp.dao.UserMapper;
 import com.study.jsp.model.UserDTO;
 import com.study.jsp.model.UserVO;
+import com.study.jsp.persistence.UserMapper;
 
 public class UserServiceImpl implements UserService{
 

@@ -3,9 +3,9 @@ package com.study.jsp.srv;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.study.jsp.dao.BoardMapper;
 import com.study.jsp.model.BoardDTO;
 import com.study.jsp.model.BoardVO;
+import com.study.jsp.persistence.BoardMapper;
 
 public class BoardServiceImpl implements BoardService {
   
